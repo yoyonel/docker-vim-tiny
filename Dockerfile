@@ -3,10 +3,10 @@ FROM jare/vim-wrapper:latest
 MAINTAINER JAremko <que01@foxmail.com>
 
 #Plugins deps
-RUN apk --update add nodejs curl ctags git python bash ncurses-terminfo
+RUN apk --update add nodejs curl ctags git python bash ncurses-terminfo　　　　　　　　　                          && \
 
-git clone https://github.com/que01/vimrc /root/.vim_runtime && cd /root/.vim_runtime && \
-sh install_awesome_vimrc.sh && git submodule init && git submodule update    && \
+git clone https://github.com/que01/vimrc /root/.vim_runtime && cd /root/.vim_runtime 　                         && \
+sh install_awesome_vimrc.sh && git submodule init && git submodule update                                       && \
 #Build YouCompleteMe
     cd /root/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive           && \
     apk add --virtual build-deps go llvm perl cmake python-dev build-base                                       && \
