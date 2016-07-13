@@ -3,7 +3,7 @@ FROM jare/vim-wrapper:latest
 MAINTAINER JAremko <que01@foxmail.com>
 
 #Plugins deps
-RUN apk --update add nodejs curl ctags git python bash ncurses-terminfo　　　　　　　　　                          && \
+RUN apk --update add curl ctags git python bash ncurses-terminfo libgcc libstdc++ libuv                         && \
 git clone https://github.com/que01/vimrc /root/.vim_runtime && cd /root/.vim_runtime 　                         && \
 sh install_awesome_vimrc.sh && git submodule init && git submodule update                                       && \
 #Build YouCompleteMe
