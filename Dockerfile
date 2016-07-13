@@ -3,14 +3,14 @@ FROM jare/vim-wrapper:latest
 MAINTAINER JAremko <que01@foxmail.com>
 
 #Plugins deps
-RUN apk --update add curl ctags git python bash ncurses-terminfo libgcc libstdc++ libuv                         && \
+RUN apk --update add curl ctags git python bash ncurses-terminfo                                                && \
 git clone https://github.com/que01/vimrc /root/.vim_runtime && cd /root/.vim_runtime 　                         && \
 sh install_awesome_vimrc.sh && git submodule init && git submodule update                                       && \
 #Build YouCompleteMe
     cd /root/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive           && \
-    apk add --virtual build-deps go llvm perl cmake python-dev build-base                                       && \
+    apk add --virtual build-deps llvm perl cmake python-dev build-base                                          && \
     cd /root/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive           && \
-    /root/.vim_runtime/sources_non_forked/YouCompleteMe/install.py --tern-completer                             && \
+    /root/.vim_runtime/sources_non_forked/YouCompleteMe/install.py                                              && \
     make                                                                                                        && \
 #Cleanup
     rm -rf /root/.vim_runtime/sources_non_forked/YouCompleteMe/third_party/ycmd/cpp   \
