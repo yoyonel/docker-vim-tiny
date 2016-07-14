@@ -1,14 +1,10 @@
-FROM jare/alpine-vim:last
+FROM jare/alpine-vim:latest
 
 MAINTAINER que01 <que01@foxmail.com>
 
-ENV DEV_PACKAGES="zsh"
-RUN apk --update --upgrade add $DEV_PACKAGES
+ENV TERM=xterm-256color
 
-#set zsh as default shell
-ENV SHELL=/bin/zsh
-
-RUN apk --update add curl ctags git python bash ncurses-terminfo nodejs                                && \
+RUN apk --update add curl ctags git python bash ncurses-terminfo nodejs　zsh                           && \
 apk add --virtual build-deps llvm perl cmake python-dev build-base                                     && \
 git clone https://github.com/que01/vimrc ~/.vim_runtime && cd ~/.vim_runtime                           && \
 sh install_awesome_vimrc.sh && git submodule init && git submodule update                              && \
