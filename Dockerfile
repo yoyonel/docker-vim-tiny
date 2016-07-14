@@ -2,16 +2,6 @@ FROM alpine
 
 MAINTAINER que01 <que01@foxmail.com>
 
-# environment variables
-ENV DEBIAN_FRONTEND noninteractive
-
-WORKDIR /home/dev
-ENV HOME /home/dev
-ENV LC_ALL en_US.UTF-8
-
-RUN chown -R dev:dev $HOME
-USER dev
-
 
 RUN apk --update add curl ctags git python bash ncurses-terminfo nodejs zsh vim                        && \
 apk add --virtual build-deps llvm perl cmake python-dev build-base                                     && \
@@ -22,8 +12,7 @@ cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --ini
 cd ~/.vim_runtime/sources_non_forked/tern_for_vim && npm install                                       && \
 apk del build-deps                                                                                     && \
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
-echo "export TERM='xterm-256color'" >> ~/.zshrc
+echo "export TERM='xterm-256color'" >> ~/.zshrc && mkdir ~/workStation && cd ~/workStation　&& zsh
 
 # Default to a login shell
-CMD ["zsh", "--login"]
 ENTRYPOINT ["vim"]
