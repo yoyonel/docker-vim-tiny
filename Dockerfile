@@ -8,4 +8,4 @@ git clone https://github.com/que01/vimrc ~/.vim_runtime && cd ~/.vim_runtime    
 sh install_awesome_vimrc.sh && git submodule init && git submodule update                     && \
 cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive && \
 ./install.py --tern-completer && cd ~/.vim_runtime && find . -name ".git" | xargs rm -Rf      &&\                                                          && \
-apk del build-deps && sh /util/ocd-clean / > /dev/null 2>&1                                   &&\
+apk del build-deps && sh /util/ocd-clean / > /dev/null 2>&1
