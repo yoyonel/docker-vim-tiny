@@ -2,6 +2,17 @@ FROM alpine
 
 MAINTAINER que01 <que01@foxmail.com>
 
+# environment variables
+ENV DEBIAN_FRONTEND noninteractive
+
+WORKDIR /home/dev
+ENV HOME /home/dev
+ENV LC_ALL en_US.UTF-8
+
+RUN chown -R dev:dev $HOME
+USER dev
+
+
 RUN apk --update add curl ctags git python bash ncurses-terminfo nodejs zsh vim               && \
 apk add --virtual build-deps llvm perl cmake python-dev build-base                            && \
 git clone https://github.com/que01/vimrc ~/.vim_runtime && cd ~/.vim_runtime                  && \
@@ -15,3 +26,4 @@ echo "export TERM='xterm-256color'" >> ~/.zshrc && \
 
 # Default to a login shell
 CMD ["zsh", "--login"]
+ENTRYPOINT ["vim"]
