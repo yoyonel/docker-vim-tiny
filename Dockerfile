@@ -23,6 +23,4 @@ rm -rf /var/cache/apk/* \
     && find / -type f -iname \*.apk-new -delete \
     && rm -rf /var/cache/apk/*
 
-
-CMD ["vim"]
-ENTRYPOINT ["zsh"]
+RUN vim
