@@ -1,4 +1,4 @@
-FROM jare/alpine-vim:last
+FROM jare/alpine-vim:latest
 
 MAINTAINER que01 <que01@foxmail.com>
 
