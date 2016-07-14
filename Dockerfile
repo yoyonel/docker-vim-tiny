@@ -12,7 +12,7 @@ cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --ini
 cd ~/.vim_runtime/sources_non_forked/tern_for_vim && npm install                                       && \
 apk del build-deps                                                                                     && \
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
-echo "export TERM='xterm-256color'" >> ~/.zshrc && mkdir ~/workStation && cd ~/workStation　&& zsh
+echo "export TERM='xterm-256color'" >> ~/.zshrc && mkdir ~/workStation && cd ~/workStation
 
 # Default to a login shell
-ENTRYPOINT ["vim"]
+CMD ["vim"]
