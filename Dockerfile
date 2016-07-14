@@ -2,6 +2,7 @@ FROM alpine
 
 MAINTAINER que01 <que01@foxmail.com>
 
+ENV TERM=xterm-256color
 
 RUN apk --update add zsh python python-dev nodejs zsh ctags git ncurses-terminfo curl \
     libsm libice libxt libx11 ncurses                                                 && \
@@ -36,10 +37,9 @@ cd ~/.vim_runtime/sources_non_forked/tern_for_vim && npm install                
 apk del build-deps                                                                                     && \
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh                                     && \
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc                                                  && \
-mkdir ~/workStation && cd ~/workStation                                                                && \
 rm -rf /var/cache/apk/* \
     && find / -type f -iname \*.apk-new -delete \
     && rm -rf /var/cache/apk/*
 
 # Define working directory.
-WORKDIR ~/workStation
+WORKDIR /root/workStation
