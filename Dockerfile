@@ -3,9 +3,9 @@ FROM alpine
 MAINTAINER que01 <que01@foxmail.com>
 
 
-RUN apk add --update --virtual build-deps python python-dev ctags build-base \
-        make mercurial libxpm-dev libx11-dev libxt-dev ncurses-dev git curl \
-        bash ncurses-terminfo nodejs zsh llvm perl cmake                        && \
+RUN apk --update add zsh python python-dev nodejs zsh ctags git ncurses-terminfo curl &&\
+    apk add --update --virtual build-deps  build-base make mercurial libxpm-dev \
+        libx11-dev libxt-dev ncurses-dev   bash llvm perl cmake             && \
     cd /tmp                                                                     && \
     git clone https://github.com/vim/vim                                        && \
     cd /tmp/vim                                                                 && \
