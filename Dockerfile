@@ -22,5 +22,3 @@ mkdir ~/workStation && cd ~/workStation                                         
 rm -rf /var/cache/apk/* \
     && find / -type f -iname \*.apk-new -delete \
     && rm -rf /var/cache/apk/*
-
-RUN vim
