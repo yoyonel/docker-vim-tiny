@@ -9,4 +9,4 @@ sh install_awesome_vimrc.sh && git submodule init && git submodule update       
 cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive && \
 ./install.py  && cd ~/.vim_runtime && find . -name ".git" | xargs rm -Rf                      &&\
 cd ~/.vim_runtime/sources_non_forked/tern_for_vim && npm install                              && \
-apk del build-deps && sh /util/ocd-clean / > /dev/null 2>&1
+apk del build-deps
