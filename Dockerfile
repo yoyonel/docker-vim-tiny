@@ -1,4 +1,4 @@
-FROM alpine
+FROM jare/alpine:latest
 
 MAINTAINER que01 <que01@foxmail.com>
 
