@@ -9,5 +9,3 @@ sh install_awesome_vimrc.sh && git submodule init && git submodule update       
 cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive && \
 ./install.py --tern-completer && cd ~/.vim_runtime && find . -name ".git" | xargs rm -Rf      &&\                                                          && \
 apk del build-deps && sh /util/ocd-clean / > /dev/null 2>&1                                   &&\
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
-echo "export TERM='xterm-256color'" >> ~/.zshrc
