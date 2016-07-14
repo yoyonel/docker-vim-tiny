@@ -11,7 +11,6 @@ cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --ini
 ./install.py  && cd ~/.vim_runtime && find . -name ".git" | xargs rm -Rf                               && \
 cd ~/.vim_runtime/sources_non_forked/tern_for_vim && npm install                                       && \
 apk del build-deps                                                                                     && \
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
 mkdir ~/workStation && cd ~/workStation
 
 # Default to a login shell
