@@ -29,7 +29,7 @@ RUN apk --update add zsh python python-dev nodejs zsh ctags git ncurses-terminfo
     cd /usr/share/vim/vim74/                                                   && \
     rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim                 && \
     find . -name *.txt                                                         && \
-git clone https://github.com/que01/vimrc ~/.vim_runtime && cd ~/.vim_runtime                           && \
+git clone -b snipmate https://github.com/que01/vimrc ~/.vim_runtime && cd ~/.vim_runtime                           && \
 sh install_awesome_vimrc.sh && git submodule init && git submodule update                              && \
 cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --init --recursive          && \
 ./install.py  && cd ~/.vim_runtime && find . -name ".git" | xargs rm -Rf                               && \
