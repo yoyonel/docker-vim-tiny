@@ -35,6 +35,7 @@ cd ~/.vim_runtime/sources_non_forked/YouCompleteMe && git submodule update --ini
 ./install.py  && cd ~/.vim_runtime && find . -name ".git" | xargs rm -Rf                               && \
 cd ~/.vim_runtime/sources_non_forked/tern_for_vim && npm install                                       && \
 cd ~/.vim_runtime/sources_non_forked/vimproc && make                                                   && \
+npm install -g jsctags                                                                                 && \
 apk del build-deps                                                                                     && \
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh                                     && \
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc                                                  && \
