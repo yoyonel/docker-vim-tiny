@@ -1,10 +1,9 @@
 FROM alpine:latest
 
 # définition du proxy
-ENV http_proxy http://proxy.ign.fr:3128
-ENV https_proxy http://proxy.ign.fr:3128
-ENV HTTP_PROXY http://proxy.ign.fr:3128
-ENV HTTPS_PROXY http://proxy.ign.fr:3128
+#ENV http_proxy http://proxy.ign.fr:3128
+#ENV https_proxy http://proxy.ign.fr:3128
+#ENV HTTP_PROXY http://proxy.ign.fr:3128
 
 MAINTAINER yoyonel <yoyonel@hotmail.com>
 
@@ -56,10 +55,11 @@ RUN 	cd ~/.vim_runtime/sources_non_forked/YouCompleteMe 				&&\
 
 #RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh                                     && \
 RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 				&& \
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc                                                  && \
-rm -rf /var/cache/apk/* \
-    && find / -type f -iname \*.apk-new -delete \
-    && rm -rf /var/cache/apk/*
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+#RUN rm -rf /var/cache/apk/* \
+#    && find / -type f -iname \*.apk-new -delete \
+#    && rm -rf /var/cache/apk/*
 
 # Define working directory.
 WORKDIR /root/workStation
